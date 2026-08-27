@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="is">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<title>Sólóhúsgögn — Framleitt síðan 1960</title>
+<meta name="description" content="Íslensk húsgagnaframleiðsla síðan 1960. Stólar, borð og sérsmíði í stáli og viði, smíðuð á Gylfaflöt í Reykjavík.">
+<link rel="preload" href="fonts/Switzer-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Switzer-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=de4c35a">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+</head>
+<body class="sl">
+
+<a class="sl-tap" href="#top" style="position:absolute;left:-9999px;top:0;background:#000;color:#fff;padding:10px 16px;z-index:200;text-decoration:none;" onfocus="this.style.left='15px'" onblur="this.style.left='-9999px'">Fara í meginmál</a>
+
+<!-- ================================================================ header -->
+<header class="sl-fixed">
+  <div class="sl-w" style="display:flex;align-items:center;gap:20px;height:46px;">
+    <a href="#top" style="text-decoration:none;flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;" aria-label="Sólóhúsgögn, efst á síðu">
+      <span class="sl-mark">Sólóhúsgögn</span>
+    </a>
+    <nav aria-label="Aðalvalmynd" class="sl-lab sl-nav-desk" style="display:flex;flex:1;justify-content:space-evenly;">
+      <div class="sl-drop">
+        <button type="button" class="sl-navlink sl-droptrig" id="dropBtn" aria-expanded="false" aria-controls="dropHusgogn">
+          Húsgögn
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        </button>
+        <div class="sl-droppanel" id="dropHusgogn">
+          <a href="#stolar">Stólar <span class="sl-code">13</span></a>
+          <a href="#barstolar">Barstólar <span class="sl-code">4</span></a>
+          <a href="#bekkir">Bekkir <span class="sl-code">2</span></a>
+          <a href="#bord">Borð <span class="sl-code">8</span></a>
+        </div>
+      </div>
+      <a class="sl-navlink" href="#sersmidi">Sérsmíði</a>
+      <a class="sl-navlink" href="#sagan">Sagan</a>
+      <a class="sl-navlink" href="#hafa-samband">Hafa samband</a>
+    </nav>
+    <a href="tel:+3545535200" class="sl-lab sl-navlink sl-nav-desk" style="flex:0 0 auto;">(+354) 553 5200</a>
+    <button type="button" id="menuOpen" aria-label="Opna valmynd" aria-expanded="false" class="sl-nav-mob sl-tap" style="margin-left:auto;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:5px;">
+      <span style="display:block;width:20px;height:1.5px;background:#000;"></span>
+      <span style="display:block;width:20px;height:1.5px;background:#000;"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================================================================ mobile panel -->
+<div id="menuPanel" role="dialog" aria-modal="true" aria-label="Valmynd"
+  style="position:fixed;inset:0;z-index:70;background:#F7F7F7;opacity:0;visibility:hidden;transition:opacity .3s ease-in-out, visibility .3s;">
+  <div class="sl-w" style="height:46px;display:flex;align-items:center;border-bottom:1px solid #E7E7E7;">
+    <button type="button" id="menuClose" aria-label="Loka valmynd" class="sl-tap" style="margin-left:auto;background:none;border:0;cursor:pointer;line-height:0;">
+      <svg width="20" height="20" viewBox="0 0 24 24" stroke="#000" stroke-width="1.5" fill="none" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg>
+    </button>
+  </div>
+  <nav class="sl-w" style="padding-top:26px;display:grid;gap:18px;">
+    <a href="#stolar" class="sl-h2 sl-taprow menuLink" style="text-decoration:none;color:#000;">Stólar</a>
+    <a href="#barstolar" class="sl-h2 sl-taprow menuLink" style="text-decoration:none;color:#000;">Barstólar</a>
+    <a href="#bekkir" class="sl-h2 sl-taprow menuLink" style="text-decoration:none;color:#000;">Bekkir</a>
+    <a href="#bord" class="sl-h2 sl-taprow menuLink" style="text-decoration:none;color:#000;">Borð</a>
+    <a href="#sersmidi" class="sl-h2 sl-taprow menuLink" style="text-decoration:none;color:#000;">Sérsmíði</a>
+    <a href="#sagan" class="sl-h2 sl-taprow menuLink" style="text-decoration:none;color:#000;">Sagan</a>
+    <a href="#hafa-samband" class="sl-h2 sl-taprow menuLink" style="text-decoration:none;color:#000;">Hafa samband</a>
+    <div style="padding-top:18px;">
+      <a class="sl-btn" href="tel:+3545535200">
+        <span class="sl-btn__vp"><span class="sl-btn__roll">
+          <span class="sl-btn__c sl-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20M12 2l10 10L12 22" stroke-miterlimit="10"/></svg>Hringja (+354) 553 5200</span>
+          <span class="sl-btn__c sl-lab" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20M12 2l10 10L12 22" stroke-miterlimit="10"/></svg>Hringja (+354) 553 5200</span>
+        </span></span>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<main id="top" style="padding-top:46px;">
+
+  <!-- ============================================================ hero
+       Two-panel Harpa install shot, the Bla 50/50 grammar carried into the
+       image itself. Real installed furniture in Iceland's concert hall,
+       not a studio cutout — announces a 65-year manufacturer, not a
+       product thumbnail. One-time scale settle on load (client-directed
+       motion deviation, see DESIGN.md). -->
+  <section class="sl-w" style="padding-top:8px;">
+    <div class="sl-hero">
+      <span class="sl-hero__f"><img class="sl-hero__img" src="assets/harpa-01.jpg" alt="Barstólar og borð frá Sólóhúsgögn í Hörpu, útsýni yfir höfnina."
+        width="1152" height="2048" style="object-position:center 40%;"></span>
+      <span class="sl-hero__f"><img class="sl-hero__img" src="assets/harpa-02.jpg" alt="Borð og stólar frá Sólóhúsgögn við glugga Hörpu."
+        width="1152" height="2048" style="object-position:center 52%;"></span>
+    </div>
+    <div class="sl-hgrid" style="padding-top:18px;">
+      <div><h1 class="sl-h1">Framleitt síðan 1960</h1></div>
+      <div>
+        <p class="sl-lede">Fjölskyldufyrirtæki sem hefur hannað og smíðað húsgögn úr stáli, viði og áklæði frá árinu 1960. Stólar, borð og sérsmíði, allt undir sama þaki á Gylfaflöt.</p>
+        <div style="padding-top:20px;max-width:340px;">
+          <a class="sl-btn" href="#stolar">
+            <span class="sl-btn__vp"><span class="sl-btn__roll">
+              <span class="sl-btn__c sl-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20M12 2l10 10L12 22" stroke-miterlimit="10"/></svg>Skoða húsgögnin</span>
+              <span class="sl-btn__c sl-lab" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20M12 2l10 10L12 22" stroke-miterlimit="10"/></svg>Skoða húsgögnin</span>
+            </span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ Stólar rail -->
+  <section class="sl-spy sl-sec sl-sec--rule" id="stolar" data-rail>
+    <div class="sl-w">
+      <div class="sl-row" style="margin-bottom:20px;">
+        <h2 class="sl-h2">Stólar</h2>
+        <div class="sl-row" style="gap:18px;flex:0 0 auto;">
+          <span class="sl-lab">13 stólar</span>
+          <span class="sl-dots" data-dots style="display:flex;gap:5px;"></span>
+          <span style="display:flex;">
+            <button type="button" class="sl-arw" data-prev aria-label="Fyrri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3L6 12l9 9"/></svg></button>
+            <button type="button" class="sl-arw" data-next aria-label="Næsta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3l9 9-9 9"/></svg></button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="sl-w"><div class="sl-rail" data-track>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-a81.webp" alt="A81 stóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">01</span><span class="sl-lab">A81</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 0.998);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-k78.webp" alt="K78 stóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">02</span><span class="sl-lab">K78</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.250);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-almar.webp" alt="Almar stóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">03</span><span class="sl-lab">Almar</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 0.999);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-boggu-stoll.webp" alt="Böggu-stóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">04</span><span class="sl-lab">Böggu-stóll</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-e60.webp" alt="E60 stóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">05</span><span class="sl-lab">E60</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-kollar.webp" alt="Kollar" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">06</span><span class="sl-lab">Kollar</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-elmar.webp" alt="Elmar stóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">07</span><span class="sl-lab">Elmar</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 0.998);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-gotti.webp" alt="Gotti stóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">08</span><span class="sl-lab">Gotti</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-klubbstollinn.webp" alt="Klúbbstóllinn" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">09</span><span class="sl-lab">Klúbbstóllinn</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-stoll-6.webp" alt="Stóll 6" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">10</span><span class="sl-lab">Stóll 6</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-sindrastoll.webp" alt="Sindrastóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">11</span><span class="sl-lab">Sindrastóll</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.001);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-e60-lounge.webp" alt="E-60 Lounge stóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">12</span><span class="sl-lab">E-60 Lounge</span></span></a>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-stolar-venta.webp" alt="Venta stóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">13</span><span class="sl-lab">Venta</span></span></a>
+    </div></div>
+  </section>
+
+  <!-- breather: Stólar banner -->
+  <div class="sl-spy sl-sec">
+    <div class="sl-w"><span class="sl-band"><img src="assets/harpa-03.jpg" alt="Sérsmíðaðir stólar frá Sólóhúsgögn í Hörpu." loading="lazy" width="2048" height="1536"></span></div>
+  </div>
+
+  <!-- ============================================================ Almar flagship chapter -->
+  <div id="kafli-almar">
+    <div class="sl-spy sl-sec sl-sec--rule">
+      <div class="sl-w">
+        <h2 class="sl-h2" style="margin-bottom:20px;">Almar</h2>
+        <div class="sl-ch">
+          <img src="assets/almar-framhlid.jpg" alt="Almar stóll frá Sólóhúsgögn, stálgrind og bólstrað sæti, hornsjónarhorn." loading="lazy" width="2421" height="1937">
+          <div class="sl-ch__side">
+            <div>
+              <p class="sl-lede">Almar er með stálgrind og bólstruðu sæti, smíðuð og bólstruð á verkstæðinu á Gylfaflöt. Sama línan fæst sem stóll og barstóll, tvær hæðir af sömu hönnun.</p>
+            </div>
+            <div class="sl-ch__pair" style="grid-template-columns:1fr 1fr 1fr;">
+              <img src="assets/almar-fram.webp" alt="Almar stóll, framhlið." loading="lazy" width="1500" height="1199">
+              <img src="assets/almar-bak.webp" alt="Almar stóll, bakhlið." loading="lazy" width="1500" height="1200">
+              <img src="assets/almar-barstoll.webp" alt="Almar stóll og Almar barstóll saman." loading="lazy" width="1500" height="1200">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ Barstólar rail -->
+  <section class="sl-spy sl-sec sl-sec--rule" id="barstolar" data-rail>
+    <div class="sl-w">
+      <div class="sl-row" style="margin-bottom:20px;">
+        <h2 class="sl-h2">Barstólar</h2>
+        <div class="sl-row" style="gap:18px;flex:0 0 auto;">
+          <span class="sl-lab">4 barstólar</span>
+          <span class="sl-dots" data-dots style="display:flex;gap:5px;"></span>
+          <span style="display:flex;">
+            <button type="button" class="sl-arw" data-prev aria-label="Fyrri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3L6 12l9 9"/></svg></button>
+            <button type="button" class="sl-arw" data-next aria-label="Næsta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3l9 9-9 9"/></svg></button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="sl-w"><div class="sl-rail" data-track>
+      <a class="sl-tile" href="#kafli-almar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-barstolar-almar-barstoll.webp" alt="Almar barstóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">01</span><span class="sl-lab">Almar barstóll</span></span></a>
+      <a class="sl-tile" href="#barstolar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-barstolar-e60-barstoll.webp" alt="E60 barstóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">02</span><span class="sl-lab">E60 barstóll</span></span></a>
+      <a class="sl-tile" href="#barstolar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-barstolar-barkollar.webp" alt="Barkollar" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">03</span><span class="sl-lab">Barkollar</span></span></a>
+      <a class="sl-tile" href="#barstolar" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-barstolar-elmar-barstoll.webp" alt="Elmar barstóll" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">04</span><span class="sl-lab">Elmar barstóll</span></span></a>
+    </div></div>
+  </section>
+
+  <!-- breather: Barstólar banner -->
+  <div class="sl-spy sl-sec">
+    <div class="sl-w"><span class="sl-band"><img src="assets/canopy-barstolar.webp" alt="Barstólar frá Sólóhúsgögn á Canopy Reykjavík." loading="lazy" width="1500" height="1004"></span></div>
+  </div>
+
+  <!-- ============================================================ Bekkir rail -->
+  <section class="sl-spy sl-sec sl-sec--rule" id="bekkir" data-rail>
+    <div class="sl-w">
+      <div class="sl-row" style="margin-bottom:20px;">
+        <h2 class="sl-h2">Bekkir</h2>
+        <div class="sl-row" style="gap:18px;flex:0 0 auto;">
+          <span class="sl-lab">2 bekkir</span>
+          <span class="sl-dots" data-dots style="display:flex;gap:5px;"></span>
+          <span style="display:flex;">
+            <button type="button" class="sl-arw" data-prev aria-label="Fyrri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3L6 12l9 9"/></svg></button>
+            <button type="button" class="sl-arw" data-next aria-label="Næsta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3l9 9-9 9"/></svg></button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="sl-w"><div class="sl-rail" data-track>
+      <a class="sl-tile" href="#bekkir" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-bekkir-bekkur.webp" alt="Bekkur" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">01</span><span class="sl-lab">Bekkur</span></span></a>
+      <a class="sl-tile" href="#bekkir" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-bekkir-e60-bekkur.webp" alt="E60 Bekkur" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">02</span><span class="sl-lab">E60 Bekkur</span></span></a>
+    </div></div>
+  </section>
+
+  <!-- breather: Bekkir banner -->
+  <div class="sl-spy sl-sec">
+    
+  </div>
+
+  <!-- ============================================================ Bord rail -->
+  <section class="sl-spy sl-sec sl-sec--rule" id="bord" data-rail>
+    <div class="sl-w">
+      <div class="sl-row" style="margin-bottom:20px;">
+        <h2 class="sl-h2">Borð</h2>
+        <div class="sl-row" style="gap:18px;flex:0 0 auto;">
+          <span class="sl-lab">8 borð</span>
+          <span class="sl-dots" data-dots style="display:flex;gap:5px;"></span>
+          <span style="display:flex;">
+            <button type="button" class="sl-arw" data-prev aria-label="Fyrri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3L6 12l9 9"/></svg></button>
+            <button type="button" class="sl-arw" data-next aria-label="Næsta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3l9 9-9 9"/></svg></button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="sl-w"><div class="sl-rail" data-track>
+      <a class="sl-tile" href="#bord" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-bord-retro-bord.webp" alt="Retro borð" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">01</span><span class="sl-lab">Retro borð</span></span></a>
+      <a class="sl-tile" href="#sulufotur" style="width:calc(var(--th) * 1.250);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-bord-sulufotur.webp" alt="Súlufótur S-400" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">02</span><span class="sl-lab">Súlufótur S-400</span></span></a>
+      <a class="sl-tile" href="#bord" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-bord-t-fotur.webp" alt="T-fótur borð" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">03</span><span class="sl-lab">T-fótur</span></span></a>
+      <a class="sl-tile" href="#bord" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-bord-aria.webp" alt="Aría borð" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">04</span><span class="sl-lab">Aría</span></span></a>
+      <a class="sl-tile" href="#bord" style="width:calc(var(--th) * 1.401);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-bord-fellibord.webp" alt="Felliborð" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">05</span><span class="sl-lab">Felliborð</span></span></a>
+      <a class="sl-tile" href="#bord" style="width:calc(var(--th) * 1.500);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-bord-ymir.webp" alt="Ýmir borð" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">06</span><span class="sl-lab">Ýmir</span></span></a>
+      <a class="sl-tile" href="#bord" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-bord-bessabord.webp" alt="Bessaborð" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">07</span><span class="sl-lab">Bessaborð</span></span></a>
+      <a class="sl-tile" href="#bord" style="width:calc(var(--th) * 1.000);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-bord-profil-bordfotur.webp" alt="Prófíl borðfótur" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">08</span><span class="sl-lab">Prófíl borðfótur</span></span></a>
+    </div></div>
+  </section>
+
+  <!-- breather: Bord banner -->
+  <div class="sl-spy sl-sec">
+    <div class="sl-w"><span class="sl-band"><img src="assets/canopy-bokahilla.jpg" alt="Innrétting frá Sólóhúsgögn á Canopy Reykjavík." loading="lazy" width="1500" height="1004"></span></div>
+  </div>
+
+  <!-- ============================================================ Sulufotur two-up: the fork made literal in one object -->
+  <div class="sl-spy sl-sec sl-sec--rule" id="sulufotur">
+    <div class="sl-w">
+      <h2 class="sl-h2" style="margin-bottom:8px;">Súlufótur S-400</h2>
+      <p class="sl-lede sl-mute" style="max-width:62ch;margin-bottom:20px;">Í hverju borði mætast greinarnar tvær: stálið að neðan, viðurinn að ofan.</p>
+      <div class="sl-2">
+        <figure>
+          <img src="assets/sulufotur-1.jpg" alt="Súlufótur S-400, stálfótur og viðarplata sett saman.">
+          <figcaption class="sl-cap sl-mute">Súlufótur S-400, stálfótur undir viðarplötu.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/sulufotur-2.jpg" alt="Súlufótur S-400, borðið tilbúið.">
+          <figcaption class="sl-cap sl-mute">Sama borð, tilbúið á gólfi.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ Sersmidi section (Sóló-Stálsmiðja) -->
+  <section class="sl-spy sl-sec sl-sec--rule" id="sersmidi">
+    <div class="sl-w">
+      <h2 class="sl-h2" style="margin-bottom:8px;">Sóló-Stálsmiðja</h2>
+      <p class="sl-lede sl-mute" style="max-width:62ch;">Við tökum að okkur hvers kyns smíði úr járni og tré.</p>
+    </div>
+  </section>
+
+  <!-- Sersmidi rail -->
+  <section class="sl-spy sl-sec" id="sersmidi-verkefni" data-rail>
+    <div class="sl-w">
+      <div class="sl-row" style="margin-bottom:20px;">
+        <h2 class="sl-h2">Verkefni</h2>
+        <div class="sl-row" style="gap:18px;flex:0 0 auto;">
+          <span class="sl-lab">5 verkefni</span>
+          <span class="sl-dots" data-dots style="display:flex;gap:5px;"></span>
+          <span style="display:flex;">
+            <button type="button" class="sl-arw" data-prev aria-label="Fyrri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3L6 12l9 9"/></svg></button>
+            <button type="button" class="sl-arw" data-next aria-label="Næsta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3l9 9-9 9"/></svg></button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="sl-w"><div class="sl-rail" data-track>
+      <a class="sl-tile" href="#sersmidi-verkefni" style="width:calc(var(--th) * 1.333);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-sersmidi-harpa.webp" alt="Harpa, verkefni" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">01</span><span class="sl-lab">Harpa</span></span></a>
+      <a class="sl-tile" href="#sersmidi-verkefni" style="width:calc(var(--th) * 1.494);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-sersmidi-canopy-reykjavik.webp" alt="Canopy Reykjavík City Centre" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">02</span><span class="sl-lab">Canopy Reykjavík</span></span></a>
+      <a class="sl-tile" href="#sersmidi-verkefni" style="width:calc(var(--th) * 1.995);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-sersmidi-icelandair-natura.webp" alt="Icelandair Hótel Reykjavík Natura" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">03</span><span class="sl-lab">Icelandair Natura</span></span></a>
+      <a class="sl-tile" href="#kafli-sjavarutvegshusid" style="width:calc(var(--th) * 1.333);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-sersmidi-sjavarutvegshusid.webp" alt="Sjávarútvegshúsið" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">04</span><span class="sl-lab">Sjávarútvegshúsið</span></span></a>
+      <a class="sl-tile" href="#sersmidi-verkefni" style="width:calc(var(--th) * 1.333);"><span class="sl-tile__f" style="height:var(--th);"><img src="assets/tile-sersmidi-advania.webp" alt="Advania, verkefni" loading="lazy"></span><span class="sl-tile__m"><span class="sl-code sl-mute">05</span><span class="sl-lab">Advania</span></span></a>
+    </div></div>
+  </section>
+
+  <!-- ============================================================ Sjavarutvegshusid flagship chapter -->
+  <div id="kafli-sjavarutvegshusid">
+    <div class="sl-spy sl-sec sl-sec--rule">
+      <div class="sl-w">
+        <h2 class="sl-h2" style="margin-bottom:20px;">Sjávarútvegshúsið</h2>
+        <div class="sl-ch">
+          <img src="assets/sjavarutvegshusid-1.webp" alt="Fyrirlestrarstólar smíðaðir fyrir Sjávarútvegshúsið." loading="lazy" width="1500" height="1125">
+          <div class="sl-ch__side">
+            <div>
+              <p class="sl-lede">Sólóhúsgögn smíðaði sérstaka fyrirlestrarstóla og borð fyrir Sjávarútvegshúsið að Skúlagötu 4. Borðin eru fest í gólfið, sætin tengd við borðfótinn og snúa sjálfkrafa að borðinu.</p>
+            </div>
+            <div class="sl-ch__pair" style="grid-template-columns:1fr;">
+              <img src="assets/sjavarutvegshusid-2.webp" alt="Sætin séð frá hlið." loading="lazy" width="1500" height="1125">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- breather: Sersmidi banner (sea-themed, ties to Sjavarutvegshusid) -->
+  <div class="sl-spy sl-sec">
+    
+  </div>
+
+  <!-- ============================================================ Sagan (heritage) -->
+  <section class="sl-spy sl-sec sl-sec--rule" id="sagan">
+    <div class="sl-w">
+      <h2 class="sl-h2" style="margin-bottom:20px;">Sagan</h2>
+      <div class="sl-mt">
+        <img src="assets/canopy-innstuga.jpg" alt="Sérsmíðuð innrétting eftir Sólóhúsgögn." loading="lazy" width="1500" height="1004">
+        <div class="sl-stick">
+          <p class="sl-lede">Sólóhúsgögn er fjölskyldufyrirtæki, stofnað árið 1960. Fyrirtækið hefur vaxið jafnt og þétt síðan og tekur við bæði litlum og stórum pöntunum, frá einstaklingum jafnt sem stórfyrirtækjum.</p>
+          <p class="sl-lede" style="padding-top:16px;">Nokkrir af fremstu húsgagnahönnuðum landsins hafa hannað línur fyrir Sólóhúsgögn í gegnum árin. Efniviðurinn er alltaf sá sami: besta stál, viður og áklæði sem Ísland og Evrópa hafa upp á að bjóða.</p>
+          <p class="sl-lab sl-mute" style="padding-top:22px;">Gylfaflöt 16-18, 112 Reykjavík</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ contact -->
+  <section class="sl-spy sl-sec sl-sec--rule" id="hafa-samband">
+    <div class="sl-w">
+      <div class="sl-mt" style="align-items:center;">
+        <h2 class="sl-h2">Hafa samband</h2>
+        <a class="sl-btn" id="footerCallCta" href="tel:+3545535200">
+          <span class="sl-btn__vp"><span class="sl-btn__roll">
+            <span class="sl-btn__c sl-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20M12 2l10 10L12 22" stroke-miterlimit="10"/></svg>Hringja (+354) 553 5200</span>
+            <span class="sl-btn__c sl-lab" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20M12 2l10 10L12 22" stroke-miterlimit="10"/></svg>Hringja (+354) 553 5200</span>
+          </span></span>
+        </a>
+      </div>
+      <p class="sl-cap sl-mute" style="padding-top:16px;">
+        Sólóhúsgögn ehf. · VSK nr. 10304 · Gylfaflöt 16-18, 112 Reykjavík · <a href="mailto:solo@solo.is" style="color:inherit;">solo@solo.is</a>
+      </p>
+      <p class="sndr-credit">Sjálfstæð frumgerð frá SNDR Studio. Ótengd Sólóhúsgögnum. Myndir og vöruheiti eru í eigu Sólóhúsgagna og notuð hér til kynningar. <a href="https://sndr-studio.pages.dev" rel="noopener">Designed by SNDR Studio</a></p>
+    </div>
+  </section>
+
+  <div class="sl-botpad"></div>
+</main>
+
+<!-- mobile: the call bar is always reachable, retires (JOB 1) once the
+     footer's own call CTA (#footerCallCta) is in view -->
+<div class="sl-nav-mob sl-callbar" style="position:fixed;left:0;right:0;bottom:0;z-index:55;padding:8px 15px calc(8px + env(safe-area-inset-bottom));background:#F7F7F7;border-top:1px solid #E7E7E7;">
+  <a class="sl-btn" href="tel:+3545535200">
+    <span class="sl-btn__vp"><span class="sl-btn__roll">
+      <span class="sl-btn__c sl-lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20M12 2l10 10L12 22" stroke-miterlimit="10"/></svg>Hringja (+354) 553 5200</span>
+      <span class="sl-btn__c sl-lab" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20M12 2l10 10L12 22" stroke-miterlimit="10"/></svg>Hringja (+354) 553 5200</span>
+    </span></span>
+  </a>
+</div>
+
+<script src="main.js?v=de4c35a"></script>
+</body>
+</html>

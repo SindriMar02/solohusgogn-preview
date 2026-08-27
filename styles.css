@@ -1,0 +1,261 @@
+/* ==========================================================================
+   Sólóhúsgögn — "Framleitt síðan 1960"
+   Verbatim transplant of the measured Blå Station system (blastation.com),
+   proven once on Myndó. One typeface, four greys, opacity-only motion.
+   Two forced deviations from the measured original (both documented in
+   DESIGN.md): secondary text is #6E6E6E not #7F7F7F (AA), display
+   line-height is 1.06 not 1.0 (Icelandic acutes clip at 1.0).
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('fonts/Switzer-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('fonts/Switzer-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('fonts/Switzer-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root{
+  --ink:#000000;
+  --ground:#F7F7F7;
+  --paper:#FFFFFF;
+  --rule:#E7E7E7;
+  --mute:#6E6E6E; /* deviation 1: not Bla's #7F7F7F, which is 3.74:1 on the ground and fails AA */
+  --face:'Switzer','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --r:3.8px;
+
+  /* the reference's own measured fluid curve, solved through both
+     breakpoints (565 and 1440), not invented */
+  --h1: clamp(36.75px, 22.54px + 2.514vw, 58.75px);
+  --h2: clamp(27.56px, 19.45px + 1.436vw, 40.12px);
+  --body: clamp(21px, 19.75px + 0.221vw, 22.93px);
+  --label: clamp(11.81px, 11.11px + 0.125vw, 12.9px);
+}
+
+*{ box-sizing:border-box; }
+html,body{ background:var(--ground); }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--face);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+img{ max-width:100%; }
+a{ color:inherit; }
+button{ font-family:inherit; }
+
+.sl-w{ width:100%; max-width:1440px; margin:0 auto; padding:0 15px; }
+
+/* ------------------------------------------------------------ type roles
+   Display is 700 uppercase with .25px tracking; labels are 500 uppercase
+   at 12.9px; body copy is LARGER than the labels by 1.78x. That inversion
+   is the whole restraint. */
+.sl-h1{ font-size:var(--h1); font-weight:700; line-height:1.06; letter-spacing:.25px; text-transform:uppercase; margin:0; text-wrap:balance; }
+.sl-h2{ font-size:var(--h2); font-weight:700; line-height:1.06; letter-spacing:.25px; text-transform:uppercase; margin:0; text-wrap:balance; }
+.sl-lede{ font-size:var(--body); font-weight:400; line-height:1.25; margin:0; }
+.sl-lab{ font-size:var(--label); font-weight:500; line-height:1.333; letter-spacing:.25px; text-transform:uppercase; }
+.sl-code{ font-size:var(--label); font-weight:400; line-height:1.333; letter-spacing:.25px; }
+.sl-cap{ font-size:13.5px; font-weight:400; line-height:1.42; color:var(--ink); }
+.sl-mute{ color:var(--mute); }
+
+/* a chapter opens on a 1px hairline that runs the container width */
+.sl-sec{ position:relative; padding-top:15.3px; margin-top:56px; }
+.sl[id],[id]{ scroll-margin-top:60px; }
+.sl-sec--rule::before{ content:""; position:absolute; top:0; left:15px; right:15px; height:1px; background:var(--rule); }
+
+/* ------------------------------------------------------------ motion
+   Client-directed deviation 2026-08-25: Sindri asked for more flow;
+   opacity-only law relaxed to opacity+14px-drift reveals. Was strictly
+   opacity-only (see git history / prior DESIGN.md revision); now every
+   .sl-spy reveals with a soft opacity+translateY(14px)->none drift,
+   .7s cubic-bezier(.22,.61,.36,1). End-state resolves to transform:none
+   (not translateY(0)) so the transition can complete to a real "no
+   transform" box — required because #sagan nests a position:sticky
+   column (.sl-stick) and a lingering non-none transform on an ancestor
+   would otherwise re-parent its containing block and break the stick. */
+.sl-spy{ opacity:0; transform:translateY(14px); transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+.sl-spy.is-in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){ .sl-spy{ opacity:1; transform:none; transition:none; } }
+
+/* hero: two-panel Harpa install shot. One-time settle only, at load,
+   never on scroll. Second named motion exception (with the marquee
+   below and the reveal drift above) — see DESIGN.md. */
+.sl-hero{ display:grid; grid-template-columns:1fr 1fr; gap:8px; height:clamp(420px,72vh,780px); }
+.sl-hero__f{ display:block; height:100%; overflow:hidden; border-radius:var(--r); }
+.sl-hero__img{ display:block; width:100%; height:100%; object-fit:cover; transform:scale(1.03); animation:sl-settle 1.8s cubic-bezier(.22,.61,.36,1) forwards; }
+@keyframes sl-settle{ to{ transform:scale(1); } }
+@media (max-width:800px){ .sl-hero{ grid-template-columns:1fr 1fr; height:clamp(260px,54vh,420px); } }
+@media (max-width:520px){ .sl-hero{ grid-template-columns:1fr; height:auto; } .sl-hero__f{ height:clamp(320px,62vh,460px); } }
+@media (prefers-reduced-motion:reduce){ .sl-hero__img{ animation:none; transform:none; } }
+
+/* sticky text column: holds while a tall frame scrolls past it. desktop only */
+@media (min-width:801px){ .sl-stick{ position:sticky; top:66px; } }
+
+/* ------------------------------------------------------------ the black bar
+   Two stacked copies of the label; the wrapper rolls up by one line-height
+   on hover so the second copy takes the first one's place. This is the
+   ONLY moving element on the entire page. */
+.sl-btn{
+  display:block; width:100%; background:var(--ink); color:var(--paper);
+  border-radius:var(--r); padding:11.5px; text-decoration:none; border:0;
+  cursor:pointer; text-align:center;
+}
+.sl-btn__vp{ display:block; height:17.2px; overflow:hidden; }
+.sl-btn__roll{ display:block; transition:transform .3s ease-in-out; }
+.sl-btn__c{ display:flex; align-items:center; justify-content:center; gap:10px; height:17.2px; }
+.sl-btn:hover .sl-btn__roll,
+.sl-btn:focus-visible .sl-btn__roll{ transform:translateY(-17.2px); }
+.sl-btn:active{ opacity:.85; } /* press feedback, opacity only, no transform */
+.sl-btn svg{ width:13px; height:13px; flex:none; stroke:currentColor; stroke-width:2; fill:none; }
+@media (prefers-reduced-motion:reduce){ .sl-btn__roll{ transition:none; } }
+
+/* ------------------------------------------------------------ catalogue row
+   Fixed tile HEIGHT, width set by each photograph's own ratio. */
+.sl-rail{
+  --th:clamp(300px,34vw,470px);
+  display:flex; gap:8px; overflow-x:auto; scroll-snap-type:x proximity;
+  scroll-behavior:smooth;
+  scrollbar-width:none; -ms-overflow-style:none; padding-bottom:2px;
+}
+@media (prefers-reduced-motion:reduce){ .sl-rail{ scroll-behavior:auto; } }
+.sl-rail::-webkit-scrollbar{ display:none; }
+.sl-tile{ flex:none; scroll-snap-align:start; text-decoration:none; color:var(--ink); display:block; }
+.sl-tile__f{ background:var(--paper); display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:var(--r); }
+.sl-tile img{ display:block; height:100%; width:100%; object-fit:cover; }
+.sl-tile__m{ display:flex; gap:8px; align-items:baseline; padding-top:9px; }
+
+.sl-dot{ width:22px; height:44px; background:none; border:0; padding:0; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; }
+.sl-dot::before{ content:""; width:7px; height:7px; background:var(--rule); }
+.sl-dot[data-on="1"]::before{ background:var(--ink); }
+.sl-arw{ width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:none; border:0; cursor:pointer; color:var(--ink); }
+.sl-arw:disabled{ opacity:.25; cursor:default; }
+.sl-arw svg{ width:14px; height:14px; stroke:currentColor; stroke-width:1.5; fill:none; }
+
+/* two images side by side, caption under */
+.sl-2{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.sl-2>*{ min-width:0; }
+.sl-2 figure{ margin:0; }
+.sl-2 img{ display:block; width:100%; height:auto; border-radius:var(--r); }
+.sl-2 figcaption{ padding-top:9px; max-width:62ch; }
+
+/* ------------------------------------------------------------ chapter
+   One tall frame left, text and its two supporting frames right, both
+   columns locked to the same height (the Myndo fix: without this, a
+   one-sentence description strands the right column). */
+.sl-ch{ display:grid; grid-template-columns:1fr 1fr; grid-template-rows:minmax(0,1fr); gap:8px; height:clamp(420px,62vh,680px); }
+.sl-ch>*{ min-height:0; min-width:0; }
+.sl-ch>img{ width:100%; height:100%; object-fit:cover; object-position:center 32%; display:block; border-radius:var(--r); }
+.sl-ch__side{ display:flex; flex-direction:column; gap:12px; min-height:0; }
+.sl-ch__pair{ display:grid; grid-template-columns:1fr 1fr; gap:8px; flex:1 1 auto; min-height:0; }
+.sl-ch__pair img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block; border-radius:var(--r); }
+@media (max-width:800px){
+  .sl-ch{ grid-template-columns:1fr; grid-template-rows:auto; height:auto; }
+  .sl-ch>img{ height:clamp(300px,58vh,480px); }
+  .sl-ch__pair{ height:230px; }
+}
+
+/* full-bleed breather band: carries the photograph's OWN ratio, never a
+   fixed height, so nothing is enlarged to fill it */
+.sl-band{ display:block; width:100%; aspect-ratio:2500/977; }
+.sl-band>img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.sl-band--wide{ aspect-ratio:2500/781; }
+@media (max-width:800px){ .sl-band,.sl-band--wide{ aspect-ratio:2/1; } }
+
+/* image left, text right */
+.sl-mt{ display:grid; grid-template-columns:1fr 1fr; gap:8px; align-items:start; }
+.sl-mt img{ display:block; width:100%; height:auto; border-radius:var(--r); }
+
+/* ------------------------------------------------------------ header / nav */
+.sl-fixed{ position:fixed; top:0; left:0; right:0; z-index:60; padding-top:max(env(safe-area-inset-top), 6px); padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); background:var(--ground); border-bottom:1px solid var(--rule); }
+.sl-mark{ background:var(--ink); color:var(--paper); display:inline-flex; align-items:center; padding:5px 9px 6px; font-weight:700; letter-spacing:.25px; font-size:15px; line-height:1; text-transform:uppercase; border-radius:2px; white-space:nowrap; }
+.sl-navlink{ text-decoration:none; color:var(--ink); position:relative; display:inline-flex; align-items:center; min-height:44px; border-bottom:1px solid transparent; transition:border-color .3s ease-in-out; }
+.sl-navlink:hover,.sl-navlink:focus-visible{ border-bottom-color:var(--ink); }
+
+.sl-hgrid{ display:flex; flex-direction:row; align-items:flex-start; margin:0 -7.64px; }
+.sl-hgrid>*{ flex:0 1 50%; min-width:0; padding:0 7.64px; }
+@media (max-width:800px){ .sl-hgrid{ display:block; margin:0; } .sl-hgrid>*{ padding:0; } .sl-hgrid>*+*{ padding-top:14px; } }
+
+.sl-row{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+
+.sl :focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+body :focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+
+.sl-nav-mob{ display:none; }
+.sl-tap{ min-width:44px; min-height:44px; display:inline-flex; align-items:center; justify-content:center; }
+.sl-taprow{ min-height:44px; display:flex; align-items:center; }
+.sl-botpad{ height:64px; }
+@media (max-width:800px){ .sl-botpad{ height:120px; transition:height .35s cubic-bezier(.22,.61,.36,1); } }
+
+/* JOB 1: the sticky call bar retires as the footer's own call CTA (#footerCallCta)
+   comes into view — it reads as the same button settling into its resting place,
+   not a UI element blinking out. Single flag (body.sl-cta-docked) drives both the
+   bar's exit and the bottom-padding collapse so there's no dead gap once it's gone.
+   Scoped to .sl-callbar (NOT .sl-nav-mob) — that class is shared with the header's
+   hamburger toggle button, which must never be touched by this rule. */
+.sl-callbar{ transition:transform .35s cubic-bezier(.22,.61,.36,1), opacity .35s cubic-bezier(.22,.61,.36,1); }
+body.sl-cta-docked .sl-callbar{ transform:translateY(100%); opacity:0; pointer-events:none; }
+@media (max-width:800px){ body.sl-cta-docked .sl-botpad{ height:24px; } }
+@media (prefers-reduced-motion:reduce){
+  .sl-callbar{ transition:none; }
+  .sl-botpad{ transition:none; }
+}
+
+@media (max-width:800px){
+  .sl-btn{ padding:13.5px; }
+  /* seven+ 44px-tall dots overflow the header row on a phone, and a touch
+     user swipes the rail directly, so the dots go and the arrows stay */
+  .sl-dots{ display:none !important; }
+  .sl-rail{ --th:clamp(190px,42vw,260px); }
+  .sl-2,.sl-mt{ grid-template-columns:1fr; gap:8px; }
+  .sl-sec{ margin-top:40px; }
+  .sl-nav-desk{ display:none !important; }
+  .sl-nav-mob{ display:block; }
+  .sl-h1,.sl-h2{ overflow-wrap:break-word; }
+}
+
+/* tap-target floor for inline footer links (44px HIG) */
+.sl-foot a{ display:inline-block; padding:12px 4px; margin:-12px -4px; }
+
+/* ---- Húsgögn dropdown: flat system panel, no shadow (Blå law) ---- */
+.sl-drop{ position:relative; }
+.sl-droptrig{ background:none; border:0; cursor:pointer; display:inline-flex; align-items:center; gap:7px; padding:12px 0; }
+.sl-droptrig svg{ width:10px; height:6px; transition:transform .25s ease-out; }
+.sl-drop.is-open .sl-droptrig svg{ transform:rotate(180deg); }
+.sl-droppanel{
+  position:absolute; top:calc(100% + 8px); left:50%; transform:translateX(-50%);
+  min-width:236px; background:#FFF; border:1px solid #E7E7E7; border-radius:3.8px;
+  padding:6px 0;
+  opacity:0; visibility:hidden;
+  transition:opacity .25s ease-out, visibility .25s;
+}
+.sl-drop.is-open .sl-droppanel{ opacity:1; visibility:visible; }
+.sl-droppanel a{
+  display:flex; justify-content:space-between; align-items:baseline; gap:24px;
+  padding:11px 18px; text-decoration:none; color:#000;
+}
+.sl-droppanel a:hover{ background:#F7F7F7; }
+.sl-droppanel .sl-code{ color:#6E6E6E; }
+/* SNDR prototype credit (footer gate) */
+.sndr-credit{font-size:12.9px;line-height:1.55;color:#6E6E6E;max-width:60ch;margin-top:18px;}
+.sndr-credit a{color:#000;border-bottom:1px solid #E7E7E7;}
+.sndr-credit a{ display:inline-block; padding-block:11px; }
+/* thumb target: inline email in the caption line */
+.sl-cap a{ display:inline-block; padding-block:14px; }
